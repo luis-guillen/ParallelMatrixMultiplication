@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1710424-4336-4fb2-bcbe-f50823bf5247" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/parallelism/ParallelMatrixMultiplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/parallelism/ParallelMatrixMultBenchmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/basic/BasicMatrixMultiplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/vectorized/VectorizedMatrixMultiplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/parallelism/BenchmarkRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/vectorized/VectorizedMatrixMultiplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/blocks/BlocksMatrixMultiplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/sparse/CSCMatrixMultiplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/sparse/CSRMatrixMultiplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/strassen/StrassenMatrixMultiplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/utils/MatrixReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/blocks/BenchmarkRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/blocks/BlocksMatrixMultiplicationBenchmark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/sparse/BenchmarkRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/sparse/CSCMatrixMultBenchmark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/sparse/CSRMatrixMultBenchmark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/sparse/CSRMatrixMultWilliam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/strassen/BenchmarkRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/strassen/StrassenMatrixMultiplicationBenchmark.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +72,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/LuisG/Desktop/Quinto curso/Primer semestre/BD/Trabajos individuales/VectorizedAndParallelMatrixMultiplication-master/VectorizedAndParallelMatrixMultiplication-master",
+    "last_opened_file_path": "C:/Users/LuisG/Desktop/Quinto curso/Primer semestre/BD/Trabajos individuales/matrixBenchmarking-main/optimizedMatrix - copia",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,6 +116,7 @@
       <workItem from="1732450924808" duration="1702000" />
       <workItem from="1732636036494" duration="757000" />
       <workItem from="1733088785327" duration="2339000" />
+      <workItem from="1733093582124" duration="2651000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
