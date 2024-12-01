@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1710424-4336-4fb2-bcbe-f50823bf5247" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/blocks/BlocksMatrixMultiplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/sparse/CSCMatrixMultiplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/sparse/CSRMatrixMultiplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/strassen/StrassenMatrixMultiplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/utils/MatrixReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/blocks/BenchmarkRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/blocks/BlocksMatrixMultiplicationBenchmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/sparse/BenchmarkRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/sparse/CSCMatrixMultBenchmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/sparse/CSRMatrixMultBenchmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/sparse/CSRMatrixMultWilliam.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/strassen/BenchmarkRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/strassen/StrassenMatrixMultiplicationBenchmark.java" afterDir="false" />
+    <list default="true" id="d1710424-4336-4fb2-bcbe-f50823bf5247" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/parallelism/ParallelMatrixMultiplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/parallelism/ParallelMatrixMultBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;luis-guillen&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/luis-guillen/optimizedMatrix&quot;,
+    &quot;accountId&quot;: &quot;23bd453d-de5a-4c6e-b17b-a358b55ecc5e&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -55,15 +50,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BenchmarkRunner.executor": "Run",
+    "Application.ParallelMatrixMultiplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/LuisG/Desktop/Quinto curso/Primer semestre/BD/Trabajos individuales/VectorizedAndParallelMatrixMultiplication-master/VectorizedAndParallelMatrixMultiplication-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "com.github.copilot.settings.ApplicationConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
@@ -77,8 +79,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -91,12 +93,43 @@
       <option name="presentableId" value="Default" />
       <updated>1731325929179</updated>
       <workItem from="1731325930136" duration="1877000" />
-      <workItem from="1731327816038" duration="1673000" />
+      <workItem from="1731327816038" duration="3275000" />
+      <workItem from="1731445644053" duration="195000" />
+      <workItem from="1731445888260" duration="56000" />
+      <workItem from="1731500067237" duration="485000" />
+      <workItem from="1732218399705" duration="5189000" />
+      <workItem from="1732450924808" duration="1702000" />
+      <workItem from="1732636036494" duration="757000" />
+      <workItem from="1733088785327" duration="2339000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <option name="closed" value="true" />
+      <created>1731329609535</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731329609535</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
