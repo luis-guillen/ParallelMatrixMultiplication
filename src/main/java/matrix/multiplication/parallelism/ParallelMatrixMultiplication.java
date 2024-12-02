@@ -1,7 +1,5 @@
 package matrix.multiplication.parallelism;
 
-import java.util.Arrays;
-
 public class ParallelMatrixMultiplication {
 
     static class MatrixMultiplicationTask extends Thread {
@@ -63,43 +61,5 @@ public class ParallelMatrixMultiplication {
         }
 
         return C;
-    }
-
-    // Method to print a matrix
-    public static void printMatrix(double[][] matrix) {
-        for (double[] row : matrix) {
-            System.out.println(Arrays.toString(row));
-        }
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        // Example matrices A and B
-        double[][] matrixA = {
-                {1, 0, 0, 0},
-                {0, 2, 0, 0},
-                {0, 0, 0, 3},
-                {4, 0, 5, 0}
-        };
-
-        double[][] matrixB = {
-                {0, 0, 1, 0},
-                {2, 0, 0, 0},
-                {0, 0, 0, 3},
-                {0, 4, 0, 0}
-        };
-
-        System.out.println("Matrix A:");
-        printMatrix(matrixA);
-
-        System.out.println("\nMatrix B:");
-        printMatrix(matrixB);
-
-        // Perform parallel matrix multiplication with 4 threads
-        System.out.println("\nMultiplying matrices A and B using 4 threads:");
-        double[][] resultMatrix = multiplyMatricesParallel(matrixA, matrixB, 4);
-
-        // Print the result matrix
-        System.out.println("\nResult Matrix:");
-        printMatrix(resultMatrix);
     }
 }

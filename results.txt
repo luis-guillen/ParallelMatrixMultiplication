@@ -1,0 +1,20 @@
+C:\Users\LuisG\.jdks\corretto-17.0.11\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\lib\idea_rt.jar=56296:C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.5\bin" -Dfile.encoding=UTF-8 -classpath "C:\Users\LuisG\Desktop\Quinto curso\Primer semestre\BD\Trabajos individuales\matrixBenchmarking-main\ParallelMatrixMultiplication\target\test-classes;C:\Users\LuisG\Desktop\Quinto curso\Primer semestre\BD\Trabajos individuales\matrixBenchmarking-main\ParallelMatrixMultiplication\target\classes;C:\Users\LuisG\.m2\repository\org\openjdk\jmh\jmh-core\1.35\jmh-core-1.35.jar;C:\Users\LuisG\.m2\repository\net\sf\jopt-simple\jopt-simple\5.0.4\jopt-simple-5.0.4.jar;C:\Users\LuisG\.m2\repository\org\apache\commons\commons-math3\3.2\commons-math3-3.2.jar;C:\Users\LuisG\.m2\repository\org\openjdk\jmh\jmh-generator-annprocess\1.35\jmh-generator-annprocess-1.35.jar" benchmark.MatrixMultiplicationBenchmarkRunner
+Algorithm    | Matrix Size | Execution Time (ms) | CPU (%)    | Memory (bytes)
+---------------------------------------------------------------
+Basic        | 128        | 10              | 0.00       | 462408
+Vectorized   | 128        | 10              | 0.00       | 0
+Parallel     | 128        | 18              | 20.98      | 0
+Basic        | 256        | 40              | 3.21       | 463432
+Vectorized   | 256        | 17              | 22.75      | 1172320
+Parallel     | 256        | 10              | 12.44      | 924872
+Basic        | 512        | 307             | 7.21       | 8370360
+Vectorized   | 512        | 40              | 3.22       | 2115400
+Parallel     | 512        | 93              | 22.24      | -13121840
+Basic        | 1024       | 5196            | 7.32       | 5715672
+Vectorized   | 1024       | 879             | 6.96       | 8388608
+Parallel     | 1024       | 1396            | 24.62      | 8388608
+Basic        | 2048       | 63636           | 6.99       | 37509632
+Vectorized   | 2048       | 7646            | 7.42       | 33793536
+Parallel     | 2048       | 19344           | 25.87      | -36554848
+
+Process finished with exit code 0
