@@ -8,6 +8,8 @@ import com.sun.management.OperatingSystemMXBean;
 
 import java.lang.management.ManagementFactory;
 import java.util.Locale;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MatrixMultiplicationBenchmarkRunner {
 
@@ -15,19 +17,27 @@ public class MatrixMultiplicationBenchmarkRunner {
         int[] matrixSizes = {128, 256, 512, 1024, 2048}; // Tamaños de matriz
         int numThreads = 4; // Número de hilos para el paralelismo
 
+        // Mapa para almacenar tiempos básicos por tamaño de matriz
+        Map<Integer, Long> basicExecutionTimes = new HashMap<>();
+
         // Encabezado para los resultados
-        System.out.printf("%-12s | %-10s | %-15s | %-10s | %-15s%n",
-                "Algorithm", "Matrix Size", "Execution Time (ms)", "CPU (%)", "Memory (bytes)");
-        System.out.println("---------------------------------------------------------------");
+        System.out.printf("%-12s | %-10s | %-15s | %-10s | %-15s | %-10s | %-10s%n",
+                "Algorithm", "Matrix Size", "Execution Time (ms)", "CPU (%)", "Memory (bytes)", "Speedup", "Efficiency");
+        System.out.println("--------------------------------------------------------------------------------------------------");
 
         for (int size : matrixSizes) {
             double[][] matrixA = generateMatrix(size, size);
             double[][] matrixB = generateMatrix(size, size);
 
-            // Benchmark para cada algoritmo
-            runBenchmark("Basic", matrixA, matrixB, numThreads);
-            runBenchmark("Vectorized", matrixA, matrixB, numThreads);
-            runBenchmark("Parallel", matrixA, matrixB, numThreads);
+            // Guardar tiempo básico para calcular speedup y eficiencia
+            if (!basicExecutionTimes.containsKey(size)) {
+                long basicTime = runBenchmark("Basic", matrixA, matrixB, numThreads, 0);
+                basicExecutionTimes.put(size, basicTime);
+            }
+
+            // Vectorized y Parallel
+            runBenchmark("Vectorized", matrixA, matrixB, numThreads, basicExecutionTimes.get(size));
+            runBenchmark("Parallel", matrixA, matrixB, numThreads, basicExecutionTimes.get(size));
         }
     }
 
@@ -41,10 +51,9 @@ public class MatrixMultiplicationBenchmarkRunner {
         return matrix;
     }
 
-    private static void runBenchmark(String algorithm, double[][] matrixA, double[][] matrixB, int numThreads) {
+    private static long runBenchmark(String algorithm, double[][] matrixA, double[][] matrixB, int numThreads, long basicExecutionTime) {
         OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
         Runtime runtime = Runtime.getRuntime();
-        int availableProcessors = runtime.availableProcessors();
 
         // Medir antes de la ejecución
         long startCpuTime = osBean.getProcessCpuTime();
@@ -69,7 +78,7 @@ public class MatrixMultiplicationBenchmarkRunner {
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
-            return;
+            return -1;
         }
 
         // Medir después de la ejecución
@@ -79,11 +88,21 @@ public class MatrixMultiplicationBenchmarkRunner {
 
         // Calcular métricas
         long executionTime = (endWallClockTime - startWallClockTime) / 1_000_000; // Convertir a ms
-        double cpuUsage = ((double) (endCpuTime - startCpuTime) / (endWallClockTime - startWallClockTime)) * 100 / availableProcessors;
+        double cpuUsage = ((double) (endCpuTime - startCpuTime) / (endWallClockTime - startWallClockTime)) * 100 / numThreads;
         long memoryUsage = finalMemory - initialMemory;
 
+        // Calcular speedup y eficiencia si no es algoritmo básico
+        double speedup = 0;
+        double efficiency = 0;
+        if (basicExecutionTime > 0) {
+            speedup = (double) basicExecutionTime / executionTime;
+            efficiency = speedup / numThreads;
+        }
+
         // Imprimir resultados
-        System.out.printf(Locale.US, "%-12s | %-10d | %-15d | %-10.2f | %-15d%n",
-                algorithm, matrixA.length, executionTime, cpuUsage, memoryUsage);
+        System.out.printf(Locale.US, "%-12s | %-10d | %-15d | %-10.2f | %-15d | %-10.2f | %-10.2f%n",
+                algorithm, matrixA.length, executionTime, cpuUsage, memoryUsage, speedup, efficiency * 100);
+
+        return executionTime;
     }
 }

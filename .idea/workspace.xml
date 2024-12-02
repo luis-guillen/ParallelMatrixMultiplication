@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1710424-4336-4fb2-bcbe-f50823bf5247" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/par.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/benchmark/MatrixMultiplicationBenchmarkRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/vectorized/BenchmarkRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vec.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/basic/BasicMatrixMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/basic/BasicMatrixMultiplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/parallelism/ParallelMatrixMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/parallelism/ParallelMatrixMultiplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/matrix/multiplication/vectorized/VectorizedMatrixMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/matrix/multiplication/vectorized/VectorizedMatrixMultiplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/parallelism/BenchmarkRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parallelism/BenchmarkRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/parallelism/ParallelMatrixMultBenchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parallelism/ParallelMatrixMultBenchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/vectorized/VectorizedMatrixMultiplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vectorized/VectorizedMatrixMultBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/benchmark/MatrixMultiplicationBenchmarkRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/benchmark/MatrixMultiplicationBenchmarkRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +106,7 @@
       <workItem from="1733088785327" duration="2339000" />
       <workItem from="1733093582124" duration="2651000" />
       <workItem from="1733096436629" duration="3430000" />
-      <workItem from="1733142759991" duration="7920000" />
+      <workItem from="1733142759991" duration="11033000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -133,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733096489986</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit">
+      <option name="closed" value="true" />
+      <created>1733173853564</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733173853564</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
